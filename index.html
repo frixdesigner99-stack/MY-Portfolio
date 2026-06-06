@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafeez-Ur-Rehman | Graphics Designer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: white; overflow-x: hidden; }
+        #canvas-container { position: fixed; top: 0; left: 0; z-index: -1; width: 100%; height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .skill-bar { height: 8px; border-radius: 4px; background: #334155; overflow: hidden; }
+        .skill-progress { height: 100%; background: linear-gradient(90deg, #3b82f6, #2dd4bf); width: 0; transition: width 1.5s ease-out; }
+        .custom-cursor { width: 20px; height: 20px; border: 2px solid #3b82f6; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s; }
+    </style>
+</head>
+<body>
+
+    <div class="custom-cursor" id="cursor"></div>
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center glass">
+        <h1 class="text-2xl font-bold tracking-tighter uppercase">Hafeez-Ur-Rehman</h1>
+        <div class="space-x-8 hidden md:block">
+            <a href="#about" class="hover:text-blue-400 transition">About</a>
+            <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+            <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+            <a href="#contact" class="px-5 py-2 bg-blue-600 rounded-full hover:bg-blue-500 transition">Hire Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4">
+        <div class="hero-content">
+            <h2 class="text-6xl md:text-8xl font-extrabold mb-4 opacity-0" id="hero-name">HAFEEZ-UR<br><span class="text-blue-500">REHMAN</span></h2>
+            <p class="text-xl md:text-2xl text-gray-400 mb-8 opacity-0" id="hero-tag">Graphics Designer & AutoCAD Specialist</p>
+            <div class="flex gap-4 justify-center opacity-0" id="hero-btns">
+                <a href="#experience" class="px-8 py-3 border border-white rounded-md hover:bg-white hover:text-black transition">View Work</a>
+                <a href="mailto:hafeezwork99@gmail.com" class="px-8 py-3 bg-white text-black font-bold rounded-md">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-8 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <h3 class="text-4xl font-bold mb-6">About Me</h3>
+                <p class="text-gray-300 leading-relaxed text-lg">
+                    I am a designer with a proven track record of creating precise and innovative solutions. 
+                    Proficient in translating conceptual ideas into detailed plans, ensuring accuracy and 
+                    adherence to industrial standards. Based in Sialkot, I specialize in blending technical 
+                    precision with creative aesthetics.
+                </p>
+                <div class="mt-8 grid grid-cols-2 gap-4">
+                    <div class="glass p-4 rounded-lg">
+                        <span class="block text-blue-400 font-bold text-xl">1+ Year</span>
+                        <span class="text-sm">AutoCAD Experience</span>
+                    </div>
+                    <div class="glass p-4 rounded-lg">
+                        <span class="block text-blue-400 font-bold text-xl">3+ Tools</span>
+                        <span class="text-sm">Mastery in Design</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal glass p-8 rounded-2xl border-l-4 border-blue-500">
+                <h4 class="text-xl font-bold mb-4 italic">"Translating ideas into industrial reality."</h4>
+                <p class="text-gray-400 mb-4">📍 New Miana Pura, Western Roras Road, Sialkot.</p>
+                <p class="text-gray-400">📞 0313-4933308 / 0324-9984946</p>
+                <p class="text-gray-400">📧 hafeezwork99@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto px-8">
+            <h3 class="text-4xl font-bold mb-16 text-center">Professional Experience</h3>
+            <div class="space-y-12">
+                <!-- Exp 1 -->
+                <div class="exp-card glass p-8 rounded-xl flex flex-col md:flex-row gap-6 hover:scale-[1.02] transition duration-300">
+                    <div class="md:w-1/4 text-blue-400 font-bold">Current</div>
+                    <div class="md:w-3/4">
+                        <h4 class="text-2xl font-bold">Auto CAD Design Engineer</h4>
+                        <p class="text-lg text-gray-300">Frix Surgical Instruments</p>
+                        <p class="mt-2 text-gray-400">1-year experience creating detailed technical designs for surgical instruments in Sialkot.</p>
+                    </div>
+                </div>
+                <!-- Exp 2 -->
+                <div class="exp-card glass p-8 rounded-xl flex flex-col md:flex-row gap-6 hover:scale-[1.02] transition duration-300">
+                    <div class="md:w-1/4 text-gray-500 font-bold">6 Months</div>
+                    <div class="md:w-3/4">
+                        <h4 class="text-2xl font-bold">Embroidery Machine Operator & Designer</h4>
+                        <p class="text-lg text-gray-300">G2 Embroidery</p>
+                        <p class="mt-2 text-gray-400">Managing complex embroidery patterns and machine operations with precision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-8 max-w-6xl mx-auto">
+        <h3 class="text-4xl font-bold mb-16 text-center">Technical Expertise</h3>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <div class="mb-6">
+                    <div class="flex justify-between mb-2"><span>AutoCAD 2D & 3D</span><span>95%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
+                </div>
+                <div class="mb-6">
+                    <div class="flex justify-between mb-2"><span>CorelDRAW</span><span>85%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+                </div>
+            </div>
+            <div>
+                <div class="mb-6">
+                    <div class="flex justify-between mb-2"><span>Photoshop</span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+                </div>
+                <div class="mb-6">
+                    <div class="flex justify-between mb-2"><span>MS Office</span><span>90%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-8">
+        <div class="max-w-4xl mx-auto glass p-10 rounded-3xl">
+            <h3 class="text-4xl font-bold mb-8 text-center">Get In Touch</h3>
+            <form action="send_email.php" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" name="name" placeholder="Your Name" class="bg-slate-800 p-4 rounded-lg outline-none focus:ring-2 ring-blue-500" required>
+                <input type="email" name="email" placeholder="Your Email" class="bg-slate-800 p-4 rounded-lg outline-none focus:ring-2 ring-blue-500" required>
+                <textarea name="message" placeholder="Project Details" class="bg-slate-800 p-4 rounded-lg outline-none focus:ring-2 ring-blue-500 md:col-span-2 h-32" required></textarea>
+                <button type="submit" class="md:col-span-2 bg-blue-600 py-4 rounded-lg font-bold text-xl hover:bg-blue-500 transition shadow-lg shadow-blue-500/20">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-500 border-t border-gray-800">
+        <p>&copy; 2024 Hafeez-Ur-Rehman. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // --- 1. Three.js 3D Background ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+        const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+        const material = new THREE.MeshBasicMaterial({ color: 0x3b82f6, wireframe: true });
+        const torus = new THREE.Mesh(geometry, material);
+        scene.add(torus);
+
+        const particlesGeometry = new THREE.BufferGeometry();
+        const counts = 1500;
+        const positions = new Float32Array(counts * 3);
+        for(let i=0; i<counts*3; i++) { positions[i] = (Math.random() - 0.5) * 50; }
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particlesMaterial = new THREE.PointsMaterial({ size: 0.05, color: 0xffffff });
+        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
+
+        camera.position.z = 30;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            torus.rotation.x += 0.005;
+            torus.rotation.y += 0.002;
+            particles.rotation.y += 0.001;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // --- 2. GSAP Animations ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Animation
+        gsap.to("#hero-name", { opacity: 1, y: -20, duration: 1, delay: 0.5 });
+        gsap.to("#hero-tag", { opacity: 1, y: -20, duration: 1, delay: 0.8 });
+        gsap.to("#hero-btns", { opacity: 1, y: -20, duration: 1, delay: 1.1 });
+
+        // Scroll Reveal
+        gsap.utils.toArray('.reveal').forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: el,
+                y: 50, opacity: 0, duration: 1, ease: "power2.out"
+            });
+        });
+
+        // Skill Bars Animation
+        gsap.utils.toArray('.skill-progress').forEach(bar => {
+            ScrollTrigger.create({
+                trigger: bar,
+                onEnter: () => bar.style.width = bar.dataset.width
+            });
+        });
+
+        // --- 3. Custom Mouse Cursor ---
+        const cursor = document.getElementById('cursor');
+        window.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+        });
+
+        document.querySelectorAll('a, button').forEach(item => {
+            item.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2)');
+            item.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+        });
+    </script>
+<form action="https://formspree.io/f/your_unique_id" method="POST">
+</body>
+</html>
